@@ -1,0 +1,10 @@
+*.out
+*.sh
+
+a.cpp
+temp.cpp
+input.txt
+output.txt
+
+a.py
+temp.py

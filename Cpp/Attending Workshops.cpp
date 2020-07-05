@@ -53,15 +53,15 @@ int CalculateMaxWorkshops(Available_Workshops *aw)
 
     sort(ws, ws + n);
 
-    int count = 0;
+    int count = 1;
 
-    for (int i = 0, j = 1; i < n and j < n; i++)
+    for (int i = 1, j = 0; i < n; i++)
     {
-        j = i + 1;
-        while (ws[j].start <= ws[i].end and ws[j].end >= ws[i].start)
-            j++;
-        count++;
-        i = j;
+        if (ws[i].start >= ws[j].end)
+        {
+            count++;
+            j = i;
+        }
     }
 
     return count;
